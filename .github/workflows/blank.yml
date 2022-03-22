@@ -35,7 +35,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      # Test for gh-pages branch  
+      # Test1 for gh-pages branch  
       - name: Branch protection ON
         uses: octokit/request-action@v2.x
         with:
@@ -49,7 +49,7 @@ jobs:
             contexts:
               - build
           enforce_admins: |
-            null
+            strict: true
           required_pull_request_reviews: |
             dismiss_stale_reviews: true
             required_approving_review_count: 1
