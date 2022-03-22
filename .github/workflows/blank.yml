@@ -39,7 +39,7 @@ jobs:
       - name: Branch protection ON
         uses: octokit/request-action@v2.x
         with:
-          route: PUT /repos/:repository/branches/main/protection
+          route: PUT /repos/:repository/branches/gh-pages/protection
           repository: ${{ github.repository }}
           mediaType: |
             previews: 
