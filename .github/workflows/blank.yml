@@ -54,5 +54,5 @@ jobs:
             required_approving_review_count: 1
           restrictions: | 
             null 
-          env:
-            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
