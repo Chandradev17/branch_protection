@@ -38,9 +38,6 @@ jobs:
       # Test1 for gh-pages branch  
       - name: Branch protection ON
         uses: octokit/request-action@v2.x
-        run: |
-          # if not, it will returns null
-          git rev-parse --verify --quiet gh-pages
         with:
           route: PUT /repos/:repository/branches/gh-pages/protection
           repository: ${{ github.repository }}
@@ -60,3 +57,6 @@ jobs:
             null 
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+        run: |
+          # if not, it will returns null
+          git rev-parse --verify --quiet gh-pages  
