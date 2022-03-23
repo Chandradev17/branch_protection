@@ -36,11 +36,11 @@ jobs:
           echo test, and deploy your project. 
 
       # Test1 for gh-pages branch  
-      - name: Branch protection ON
+      - name: Branch protection
         uses: octokit/request-action@v2.x
         with:
-          branches: dev
-          route: PUT /repos/:repository/branches/dev/protection
+          branches: gh-pages
+          route: PUT /repos/:repository/branches/gh-pages/protection
           repository: ${{ github.repository }}
           mediaType: |
             previews: 
