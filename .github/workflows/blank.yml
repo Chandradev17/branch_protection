@@ -33,11 +33,14 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project.
+          echo test, and deploy your project. 
 
       # Test1 for gh-pages branch  
       - name: Branch protection ON
         uses: octokit/request-action@v2.x
+        run: |
+          # if not, it will returns null
+          git rev-parse --verify --quiet gh-pages
         with:
           route: PUT /repos/:repository/branches/gh-pages/protection
           repository: ${{ github.repository }}
@@ -52,7 +55,7 @@ jobs:
             null
           required_pull_request_reviews: |
             dismiss_stale_reviews: true
-            required_approving_review_count: 1
+            required_approving_review_count: 2
           restrictions: | 
             null 
         env:
